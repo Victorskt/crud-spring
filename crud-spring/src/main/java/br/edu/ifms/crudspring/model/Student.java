@@ -2,12 +2,12 @@ package br.edu.ifms.crudspring.model;
 
 import java.util.UUID;
 
-import javax.annotation.Generated;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
