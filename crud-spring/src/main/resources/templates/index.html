@@ -17,6 +17,73 @@
   </head>
 
   <body>
+      <!-- Modal editar -->
+      <div class="modal fade" id="Modaleditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Certeza que deseja editar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form th:action="@{/student/}" th:object="${student}" method="post">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input
+                      th:field="*{name}"
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Informe o nome"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="surname">E-mail</label>
+                    <input
+                      th:field="*{email}"
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      placeholder="Informe o e-mail"
+                    />
+                  </div>
+                  <!-- <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      th:field=""
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Informe o email"
+                    />
+                  </div> -->
+                  <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input
+                      th:field="*{password}"
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Digite a sua senha"
+                    />
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success mt-3 mb-3">
+                  Cadastrar
+                </button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary">Salvar mudanças</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-sm-around"
     >
@@ -55,16 +122,11 @@
                 <th th:text="${student.email}" scope="row"></th>
                 <th th:text="${student.password}" scope="row"></th>
                 <th>
-                  <a
-                    class="btn btn-primary"
-                    th:href="@{/student/edit/{id} (id=${student.id})}"
-                  >
+                  <a class="btn btn-primary" th:href="@{/student/edit/{id} (id=${student.id})}">
                     Editar
                   </a>
                   <a
-                    class="btn btn-danger"
-                    th:href="@{/student/remove/{id} (id=${student.id})}"
-                  >
+                  class="btn btn-danger" th:href="@{/student/remove/{id} (id=${student.id})}">
                     Excluir
                   </a>
                 </th>
@@ -90,6 +152,8 @@
     <script
       src="https://kit.fontawesome.com/8c436b5a19.js"
       crossorigin="anonymous"
+
+    
     ></script>
   </body>
 </html>
