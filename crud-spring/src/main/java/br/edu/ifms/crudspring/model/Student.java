@@ -25,7 +25,6 @@ public class Student {
 
    // @NotBlank(message = "Nome não pode estar em branco");
     String name;
-
     String email;
     String password;
 

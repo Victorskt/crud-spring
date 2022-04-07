@@ -64,7 +64,9 @@ public String editStudent(@PathVariable("id") UUID id, Model model){
 }
 
 @PostMapping("/update/{id}")
-public String updateStudent(@PathVariable("id") UUID id){
+public String updateStudent(@PathVariable("id") UUID id, @ModelAttribute Student student, Model model){
+
+    studentService.updateStudent(student);
     return "redirect:/student/";
 }
 

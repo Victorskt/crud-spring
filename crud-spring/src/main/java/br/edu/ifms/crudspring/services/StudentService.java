@@ -33,6 +33,13 @@ public class StudentService {
         return studentRepository.findById(id).get();
     }
 
+    public Student updateStudent(Student student) {
+        return studentRepository.save(student);
+
+
+
+    }
+
 
 }
 
