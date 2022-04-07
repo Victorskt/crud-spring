@@ -30,7 +30,7 @@ public class StudentService {
     }
 
     public Student findById(UUID id){
-        return studentRepository.findAllById(id).get();
+        return studentRepository.findById(id).get();
     }
 
 

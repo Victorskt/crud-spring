@@ -41,6 +41,7 @@
           <table class="table table-striped table-bordered">
             <thead class="table-dark">
               <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Senha</th>
@@ -49,25 +50,30 @@
             </thead>
             <tbody>
               <tr th:each="student: ${students}">
-                <th th:text= "${student.id}" scope= "row"></th>
-                <th th:text= "${student.name}" scope= "row"></th>
-                <th th:text= "${student.email}" scope= "row"></th>
-                <th th:text= "${student.password}" scope= "row"></th>
+                <th th:text="${student.id}" scope="row"></th>
+                <th th:text="${student.name}" scope="row"></th>
+                <th th:text="${student.email}" scope="row"></th>
+                <th th:text="${student.password}" scope="row"></th>
                 <th>
-                  <a class="btn btn-primary" 
-                  th:href="@{student/edit/{id} (id=${student.id})}">
+                  <a
+                    class="btn btn-primary"
+                    th:href="@{/student/edit/{id} (id=${student.id})}"
+                  >
                     Editar
                   </a>
-                  <a class="btn btn-danger" th:href="@{student/remove/{id} (id=${student.id})}">
+                  <a
+                    class="btn btn-danger"
+                    th:href="@{/student/remove/{id} (id=${student.id})}"
+                  >
                     Excluir
                   </a>
                 </th>
               </tr>
             </tbody>
           </table>
-          <!-- <p class="no-results" th:if="${students.isEmpty}">
+          <p class="no-results" th:if="${students.isEmpty}">
             Nenhum resultado encontrado
-          </p> -->
+          </p>
         </div>
       </div>
     </main>

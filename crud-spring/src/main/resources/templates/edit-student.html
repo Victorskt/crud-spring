@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Cadastrar Aluno</title>
+    <title>Editar Estudante</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
@@ -33,8 +33,12 @@
           <div
             class="col-md-6 col-sm-6 container justify-content-center border"
           >
-            <h2>Cadastro de Aluno</h2>
-            <form th:action="@{/student/}" th:object="${student}" method="post">
+            <h2>Editar Estudante</h2>
+            <form
+              th:action="@{/student/update/{id} (id=${student.id})}"
+              th:object="${student}"
+              method="post"
+            >
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Nome</label>
@@ -55,17 +59,8 @@
                     id="email"
                     placeholder="Informe o e-mail"
                   />
-                <!-- </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    th:field=""
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Informe o email"
-                  /> -->
                 </div>
+
                 <div class="form-group">
                   <label for="password">Senha</label>
                   <input
@@ -78,7 +73,7 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-success mt-3 mb-3">
-                Cadastrar
+                Atualizar
               </button>
             </form>
           </div>
