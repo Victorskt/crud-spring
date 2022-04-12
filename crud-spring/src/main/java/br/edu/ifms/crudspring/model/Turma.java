@@ -1,5 +1,6 @@
 package br.edu.ifms.crudspring.model;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,8 @@ public class Turma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     UUID id;
     String nome;
-    @OneToMany(mappedBy = "professor")
-    Turma turma;
+    @OneToMany(mappedBy = "turma")
+    List<Professor>professores;
+  
 
 }

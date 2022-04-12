@@ -15,7 +15,7 @@ public class Professor {
     UUID id;
     String nome;
     @ManyToOne
-    @JoinColumn(name = "professor_id")
+    @JoinColumn(name = "turma_id")
     Turma turma;
 
 }
